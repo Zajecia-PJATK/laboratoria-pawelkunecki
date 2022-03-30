@@ -1,0 +1,37 @@
+package com.company;
+
+import java.io.IOException;
+
+enum karta_war {
+    JEDYNKA, DWÓJKA, TRÓJKA, CZWÓRKA, PIĄTKA, SZÓSTKA, SIÓDEMKA, ÓSEMKA, DZIEWIĄTKA, DZIESĄTKA, WALET, KRÓLOWA, KRÓL, AS;
+}
+enum karta_kol{
+    KIER,KARO,PIK,TREFL;
+}
+
+class Card {
+    private karta_war wartosc;
+    private karta_kol kolor;
+
+    public Card(karta_war wartosc, karta_kol kolor) {
+        this.wartosc = wartosc;
+        this.kolor = kolor;
+    }
+
+    @Override
+    public String toString() {
+        return "Karta: " + wartosc + " " + kolor;
+    }
+}
+
+class Main {
+    public static void main(String[] args) throws IOException {
+        Card karta1 = new Card(karta_war.JEDYNKA, karta_kol.KARO);
+        System.out.println(karta1);
+        Card karta2 = new Card(karta_war.AS, karta_kol.TREFL);
+        System.out.println(karta2);
+        Card karta3 = new Card(karta_war.ÓSEMKA, karta_kol.PIK);
+        System.out.println(karta3);
+
+    }
+}
