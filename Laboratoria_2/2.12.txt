@@ -1,0 +1,20 @@
+package com.company;
+
+import lombok.Data;
+
+import java.io.IOException;
+
+
+@Data class Invoice{
+    private String description;
+    private int amount;
+}
+
+class Main {
+    public static void main(String[] args) throws IOException {
+        Invoice inv = new Invoice();
+        inv.setDescription("Przykładowy opis");
+        inv.setAmount(5);
+        System.out.println(inv.getDescription() + " " + inv.getAmount());
+    }
+}
