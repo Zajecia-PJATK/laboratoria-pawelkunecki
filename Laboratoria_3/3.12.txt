@@ -1,0 +1,36 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) throws IOException {
+        Scanner in = new Scanner(System.in);
+        String t,k;
+        String[] p;
+        int buf_1=0,buf_2=0;
+        t = in.nextLine();
+        p = in.nextLine().split(" ");
+        k = in.nextLine();
+
+        String[] arr = t.split(" ");
+        String[] words = new String[20];
+
+        for (int i = 0; i < arr.length; i++) {
+            if(arr[i]==p[0]) buf_1 = i;
+            if(arr[i]==p[1]) buf_2 = i;
+        }
+        for (int j = 0; j < arr.length; j++) {
+            if(buf_1>buf_2){
+                System.out.print(arr[j] + " ");
+                if(buf_1==j){
+                    System.out.print(k + " ");
+                }
+            }
+            else{
+                System.out.print(arr[j] + " ");
+                if(buf_2==j){
+                    System.out.print(k + " ");
+                }
+            }
+        }
+    }
+}

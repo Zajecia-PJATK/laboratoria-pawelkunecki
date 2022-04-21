@@ -1,0 +1,13 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) throws IOException {
+        Scanner in = new Scanner(System.in);
+        String str;
+        str = in.nextLine();
+        str = str.replaceAll("[^a-zA-Z0-9]", " ");
+        str = str.replace("  ", " ");
+        System.out.println(str.trim());
+    }
+}

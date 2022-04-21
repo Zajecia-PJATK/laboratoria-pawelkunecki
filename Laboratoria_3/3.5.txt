@@ -1,0 +1,50 @@
+import java.io.IOException;
+import java.util.*;
+
+class StringManip{
+    private String str;
+
+    public void setStr(String str) {
+        this.str = str;
+    }
+
+    public String allCaps(){
+        return this.str.toUpperCase();
+    }
+
+    public String allNoCaps(){
+        return this.str.toLowerCase();
+    }
+
+    public String firstUpper(){
+        return this.str.substring(0,1).toUpperCase() + this.str.substring(1).toLowerCase();
+    }
+
+    public String allFirstUpper(){
+        String[] arr = this.str.split(" ");
+        StringBuffer sb = new StringBuffer();
+
+        for (int i = 0; i < arr.length; i++) {
+            sb.append(Character.toUpperCase(arr[i].charAt(0)))
+                    .append(arr[i].substring(1)).append(" ");
+        }
+        return sb.toString().trim();
+    }
+
+    @Override
+    public String toString() {
+        String s = allCaps() + "\n" + allNoCaps() + "\n" + firstUpper() + "\n" + allFirstUpper();
+        return s;
+    }
+}
+
+class Main {
+    public static void main(String[] args) throws IOException {
+        Scanner in = new Scanner(System.in);
+        String string;
+        string = in.nextLine();
+        StringManip str_to_manip = new StringManip();
+        str_to_manip.setStr(string);
+        System.out.println(str_to_manip);
+    }
+}
