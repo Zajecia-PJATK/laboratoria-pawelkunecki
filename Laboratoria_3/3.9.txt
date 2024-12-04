@@ -1,0 +1,16 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) throws IOException {
+        Scanner in = new Scanner(System.in);
+        String t,r,k;
+        t = in.nextLine();
+        r = in.nextLine();
+        k = in.nextLine();
+
+        String str = t.replace(r,k);
+
+        System.out.println(str);
+    }
+}

@@ -1,0 +1,14 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) throws IOException {
+        Scanner in = new Scanner(System.in);
+        String t;
+        t = in.nextLine();
+
+        String[] arr = t.split("/");
+
+        System.out.println(arr[arr.length-1]);
+    }
+}

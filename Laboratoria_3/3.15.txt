@@ -1,0 +1,34 @@
+import java.io.IOException;
+import java.util.Scanner;
+
+class Main {
+    public static void main(String[] args) throws IOException {
+        Scanner in = new Scanner(System.in);
+        String t,k,t_b4,k_b4;
+        t_b4 = in.nextLine();
+        k_b4 = in.nextLine();
+        t=t_b4.toLowerCase();
+        k=k_b4.toLowerCase();
+        boolean match = false;
+
+        String[] arr = t.split(" ");
+        String[] words = new String[20];
+
+        for (int i = 0; i < arr.length; i++) {
+            for(int j = 0; j < words.length; j++){
+                if(arr[i].equals(words[j])){
+                    match=true;
+                }
+            }
+            if((arr[i].contains(k))&&(match==false)){
+                if(arr[i].charAt(0)==k.charAt(0)){
+                    System.out.println(k + " jest przedrostkiem słowa " + arr[i]);
+                    words[i]=arr[i];
+                }
+                else{
+                    System.out.println(k + " jest przyrostkiem słowa " + arr[i]);
+                }
+            }
+        }
+    }
+}

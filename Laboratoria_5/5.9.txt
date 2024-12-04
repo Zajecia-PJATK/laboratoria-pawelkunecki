@@ -1,0 +1,36 @@
+package com.company;
+
+interface void_no_par{
+    void zero();
+}
+
+interface int_three_par{
+    int three(int x, int y, int z);
+}
+
+interface void_one_par{
+    void one(String x);
+}
+
+interface double_many_instr{
+    String many(double w, double x, double y, double z);
+}
+
+public class Main {
+    public static void main(String[] args) {
+        void_no_par w = () -> System.out.println("Hello world!");
+        w.zero();
+        int_three_par x = (int one, int two, int three) -> ((one*two)+(one*two)+three);
+        System.out.println(x.three(2, 4, 6));
+        void_one_par y = (String str) -> System.out.println(str);
+        y.one("Two to the one to the one to the three.");
+        double_many_instr z = (double a, double b, double c, double d) -> {
+            double sum = a+b+c+d;
+            double diff = a-b-c-d;
+            double prod = a*b*c*d;
+            double quo = a/b/c/d;
+            return("Suma = "+sum+"\nRóżnica = "+diff+"\nIloczyn = "+prod+"\nIloraz = "+quo);
+        };
+        System.out.println(z.many(5.17, 22.77, 16.12, 10.64));
+    }
+}
